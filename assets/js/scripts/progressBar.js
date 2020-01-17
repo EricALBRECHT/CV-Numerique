@@ -1,3 +1,4 @@
+function progressBar(){
 $(".progress-bar").each(function(i)
 {
   $(this).animate({
@@ -7,12 +8,13 @@ $(".progress-bar").each(function(i)
   $(this).prop('Counter', 0).animate({
     Counter: $(this).attr('aria-valuenow')
   }, {
-    duration: 5000,
+    duration: 2000,
     step: function(now)
     {
-      $(this).closest(".progress-wrapper")
+      $(this).closest(".progress-bar")
           .find(".progressbar-number")
-          .text(Math.ceil(now));
+          .text(Math.ceil(now)+'%');
     }
   });
 });
+};

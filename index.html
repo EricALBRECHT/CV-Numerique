@@ -341,7 +341,7 @@
 
 <section class="row">
    
-    <div class=" parallax parallax1 col-12 pt-3">    
+    <div class="parallax parallax1 col-12 pt-3">    
       <div class="offset-1 col-10">
          
          
@@ -357,8 +357,8 @@
             
     </div>
 </section>
-<section id="skill" class="skills-section section-padding parallax parallax1">
-  <div class="container offset-1 col-10">
+<section id="skill" class="skills-section section-padding parallax parallax1 ">
+  <div class="container offset-1 col-10 wow  bounceInUp " >
 
     <div class="col-12 text-center text-light">            
       <h3 >COMPÉTENCES</h3>
@@ -409,7 +409,7 @@
     <div class="skill-progress">
       <div class="skill-title"><h3>JQuery</h3></div>  
       <div class="progress">
-      <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"><span>75%</span>
+      <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"><span class="progressbar-number">75%</span>
       </div>
       </div><!-- /.progress -->
     </div><!-- /.skill-progress -->
@@ -425,7 +425,7 @@
       <div class="chart" data-percent="95" data-color="3498db">
         <span class="percent">95</span>
         <div class="chart-text">
-          <span>TFS</span><canvas class="myCanvas" id="myCanvas" height="140" width="140"></canvas>
+          <span>TFS</span><canvas class="myCanvas" id="Canvas1" data-percent="95" height="140" width="140"></canvas>
           
         </div>
       </div>
@@ -440,7 +440,7 @@
         <div class="chart-text">
           <span>Méthode AGILE</span>
         </div>
-      <canvas class="myCanvas" height="140" width="140"></canvas></div>
+      <canvas class="myCanvas" id="Canvas2" data-percent="90" height="140" width="140"></canvas></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="45" data-color="3498db">
@@ -448,7 +448,7 @@
         <div class="chart-text">
           <span>AngularJS</span>
         </div>
-      <canvas class="myCanvas" height="140" width="140"></canvas></div>
+      <canvas class="myCanvas" id="Canvas3" data-percent="45" height="140" width="140"></canvas></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="80" data-color="3498db">
@@ -456,7 +456,7 @@
         <div class="chart-text">
           <span>ASP.NET MVC</span>
         </div>
-      <canvas class="myCanvas" height="140" width="140"></canvas></div>
+      <canvas class="myCanvas" id="Canvas4" data-percent="80" height="140" width="140"></canvas></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="50" data-color="2ecc71">
@@ -464,7 +464,7 @@
         <div class="chart-text">
           <span>Java</span>
         </div>
-      <canvas class="myCanvas" height="140" width="140"></canvas></div>
+      <canvas class="myCanvas" id="Canvas5" data-percent="50" height="140" width="140"></canvas></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="45" data-color="e74c3c">
@@ -472,7 +472,7 @@
         <div class="chart-text">
           <span>AJAX</span>
         </div>
-      <canvas class="myCanvas" height="140" width="140"></canvas></div>
+      <canvas class="myCanvas" id="Canvas6" data-percent="45" height="140" width="140"></canvas></div>
     </div>
   </div>
 
@@ -516,7 +516,7 @@
 
   <div class="row">
     <div class="col-12">
-      <footer class="">
+      <footer class="test">
 
       </footer>
     </div>
@@ -532,8 +532,7 @@
   <script type="text/javascript" src="assets/js/jquery/jquery-3.4.1.js"></script>
   <script type="text/javascript" src="assets/js/scripts/ancres.js"></script>
   <script type="text/javascript" src="assets/js/scripts/progressBar.js"></script>
-  
- 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
   <script>
     AOS.init({
   duration: 1200,
@@ -548,20 +547,22 @@
 
 
 
+progressBar();
 
-
-jQuery(function ($) {
-
+//jQuery(function($) {  
+  $(document).ready(function(){
 // -------------------------------------------------------------
     // Progress Bar
     // -------------------------------------------------------------
- 
-    $('.skill-progress').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
-        if (visible) {
-            $.each($('div.progress-bar'),function(){
+ $.each($('div.progress-bar'),function(){
                 $(this).css('width', $(this).attr('aria-valuenow')+'%');
             });
             $(this).unbind('inview');
+    $('.test').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
+      alert('ok');
+        if (visible) {
+          
+            
         }
     });
 
@@ -588,129 +589,58 @@ jQuery(function ($) {
             $(this).unbind('inview');
         }
     });
+});
 
-  });
 // circle bar
 // requestAnimationFrame Shim
-(function() {
-  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-  window.requestAnimationFrame = requestAnimationFrame;
-})();
- 
+// requestAnimationFrame Shim
 
+ jQuery(document).ready(function(){
+    jQuery('.chart').each(function(){
+     // console.log(jQuery(this).find('canvas').attr('data-percent'));//console.log(jQuery(this).attr('data-percent'));
+      percent = jQuery(this).find('canvas').attr('data-percent');
+      console.log(percent);
+      id = jQuery(this).find('canvas').attr('id');
+      //console.log(id);
 
-jQuery(document).ready(function(){
-	jQuery('.chart').each(function(){
-		jQuery(this).find('.canvas').animate({
-			width:jQuery(this).attr('data-percent')
-		},6000);
-	});
-});
+      let canvas = document.getElementById(id);
+      let context = canvas.getContext('2d');
+      let x = canvas.width / 2;
+      let y = canvas.height / 2;
+      let radius = 60;
+      let endPercent = percent;
+      let curPerc = 0;
+      let counterClockwise = false;
+      let circ = Math.PI * 2;
+      let quart = Math.PI / 2;
 
-
-/* 
- var canvas = document.getElementsByClassName('myCanvas');
- var x ;
-  var y ;
-  var radius =60 ;
-  
-  var endPercent;
-  var curPerc ;
-  var counterClockwise = false;
-  var circ ;
-  var quart ;
- 
-  
- var all_canvas=[];
-
-var context=[];
-
-
-$('.chart[data-percent]').each(function () {
-  
-  var percentage = Math.ceil($(this).attr('data-percent'));
-  //console.log(percentage); 
-  all_canvas.push(percentage);
-  //console.log(all_canvas);
-    
-});
-
-all_canvas.forEach(function(item, index, array) {
-  //console.log(item, index);
-  //console.log(canvas[index]);
-  array_canvas = canvas[index];
-  console.log(array_canvas.attr());
-}
- 
-  context.push(array_canvas.getContext('2d'));
-  //console.log(context[index]);
-  x = array_canvas.width / 2;
-  y = array_canvas.height / 2;
-
-  endPercent = all_canvas[index];
-  curPerc = 0;
-  counterClockwise = false;
-  circ = Math.PI * 2;
-  quart = Math.PI / 2;
-
-  context[index].lineWidth = 10;
-  context[index].strokeStyle = '#547D6F';
-  context[index].shadowOffsetX = 0;
-  context[index].shadowOffsetY = 0;
-  context[index].shadowBlur = 10;
- current = endPercent/100;
- var contex = context[index];
- //console.log (index);
-animate();
+      context.lineWidth = 10;
+      context.strokeStyle = '#547D6F';
+      context.shadowOffsetX = 0;
+      context.shadowOffsetY = 0;
+      context.shadowBlur = 0;
+      context.shadowColor = '#656565';
+      
+      function animate(current) {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.beginPath();
+      context.arc(x, y, radius, -(quart), ((circ) * current) - quart, false);
+      context.stroke();
+      curPerc++;
+      if (curPerc < endPercent) 
+            {
+              requestAnimationFrame(function () 
+                  {
+                      animate(curPerc / 100)
+                  });
+            }
+      }
+    animate();
+    });
   
 });
 
-function animate(current) {
-  //console.log(index);
-  contex.clearRect(0, 0, array_canvas.width, array_canvas.height);
-  contex.beginPath();
-  contex.arc(x, y, radius, -(quart), ((circ) * current) - quart, false);
-  contex.stroke();
-     curPerc++;
-     if (curPerc < endPercent) {
-         requestAnimationFrame(function () {
-             animate(curPerc / 100)
-         });
-     }
- }
 
-
-);*/
 	</script>
 </body>
 </html>
-<!--
- <div class="col-xs-12 col-sm-4 col-md-2">
-      <div class="chart" data-percent="45" data-color="e74c3c">
-        <span class="percent">45</span>
-        <div class="chart-text">
-          <span>AJAX</span>
-        </div>
-      <canvas height="140" width="140"></canvas></div>
-    </div>
-
--->
-
-<!--
-<div class="item" data-aos="fade-up">1</div>
-<div class="item" data-aos="fade-down">2</div>
-<div class="item" data-aos="fade-right">3</div>
-<div class="item" data-aos="fade-left">4</div>
-
-<div class="item" data-aos="zoom-in">5</div>
-<div class="item" data-aos="zoom-out">6</div>
-
-<div class="item" data-aos="slide-up">7</div>
-
-<div class="item" data-aos="flip-up">8</div>
-<div class="item" data-aos="flip-down">9</div>
-<div class="item" data-aos="flip-right">10</div>
-<div class="item" data-aos="flip-left">11</div>
-
-*/-->
