@@ -339,30 +339,13 @@
 
 <!-- Section Compétences -->
 
-<section class="row">
-   
-    <div class="parallax parallax1 col-12 pt-3">    
-      <div class="offset-1 col-10">
-         
-         
-                       
-              <!-- Card content -->
-              <!--
-              <div class="card bg-white text-dark p-3 text-left offset-1 col-10 around" data-aos="fade-right">
-                 
-      text
-    
-            </div>-->
 
-            
-    </div>
-</section>
-<section id="skill" class="skills-section section-padding parallax parallax1 ">
+<section id="skill" class="skills-section pt-5 mb-5 parallax1 ">
   <div class="container offset-1 col-10 wow  bounceInUp " >
 
     <div class="col-12 text-center text-light">            
       <h3 >COMPÉTENCES</h3>
-      <div class="col-12 text-center mb-3"><i class="fas fa-horizontal-rule"></i> <i class="fas fa-diamond"></i><i class="fas fa-diamond"></i> <i class="fas fa-horizontal-rule"></i></div>
+      <div class="col-12 text-center mb-5"><i class="fas fa-horizontal-rule"></i> <i class="fas fa-diamond"></i><i class="fas fa-diamond"></i> <i class="fas fa-horizontal-rule"></i></div>
     </div>
 
   <div class="row">
@@ -422,23 +405,6 @@
     
   <div class="row more-skill text-center">
     <div class="col-xs-12 col-sm-4 col-md-2">
-      <div class="chart" data-percent="95" data-color="3498db">
-        <span class="percent">95</span>
-        <div class="chart-text">
-          <span>TFS</span><canvas class="myCanvas" id="Canvas1" data-percent="95" height="140" width="140"></canvas>
-          
-        </div>
-      </div>
-      <span class="chart" data-percent="86">
-        <span class="percent" aria-valuenow="90">90</span>
-      </span>
-      
-    </div>
-   
-    
-
-    
-    <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="90" data-color="3498db">
         <span class="percent">90</span>
         <div class="chart-text">
@@ -446,9 +412,21 @@
         </div>
       <canvas class="myCanvas" id="Canvas2" data-percent="90" height="140" width="140"></canvas></div>
     </div>
+   
+    
+
+    
+    <div class="col-xs-12 col-sm-4 col-md-2">
+      <div class="chart" data-percent="90" data-color="3498db">
+        <span class="percent"></span>
+        <div class="chart-text">
+          <span>Méthode AGILE</span>
+        </div>
+      <canvas class="myCanvas" id="Canvas2" data-percent="90" height="140" width="140"></canvas></div>
+    </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="45" data-color="3498db">
-        <span class="percent">45</span>
+        <span class="percent"></span>
         <div class="chart-text">
           <span>AngularJS</span>
         </div>
@@ -456,7 +434,7 @@
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="80" data-color="3498db">
-        <span class="percent">80</span>
+        <span class="percent"></span>
         <div class="chart-text">
           <span>ASP.NET MVC</span>
         </div>
@@ -464,20 +442,19 @@
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
       <div class="chart" data-percent="50" data-color="2ecc71">
-        <span class="percent">50</span>
+        <span class="percent"></span>
         <div class="chart-text">
           <span>Java</span>
         </div>
-      <canvas class="myCanvas" id="Canvas5" data-percent="50" height="140" width="140"></canvas></div>
+      <canvas class="myCanvas" id="Canvas5" height="10" width="140"></canvas></div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-2">
-      <div class="chart" data-percent="45" data-color="e74c3c">
-        <span class="percent">45</span>
+      <div class="chart" data-percent="90" data-color="3498db">
+        <span class="percent">90</span>
         <div class="chart-text">
-          <span>AJAX</span>
+          <span>Méthode AGILE</span>
         </div>
-      <canvas class="myCanvas" id="Canvas6" data-percent="45" height="140" width="140"></canvas></div>
-    </div>
+      <canvas height="140" width="140"></canvas></div>
   </div>
 
 
@@ -584,7 +561,7 @@
     // -------------------------------------------------------------
     $('.more-skill').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
         if (visible) {
-          
+          percent = jQuery(this.el).attr('data-percent');
             $('.chart').easyPieChart({
              
                 //your configuration goes here
@@ -596,9 +573,12 @@
                 lineWidth: 8,
                 size: 140,
                 animate: 2000,
-                onStep: function(from, to, percent) {
-                    this.el.children[0].innerHTML = Math.round(percent);
-                    console.log(Math.round(percent));
+                // animate the numbers
+                onStep: function(value) {
+                  this.$el.find('span.percent').text(Math.round(value));
+                },
+                onStop: function(value, to) {
+                  this.$el.find('span.percent').text(Math.round(to));
                 }
 
             });
