@@ -87,6 +87,7 @@ h5{
 .skills-section {
     background-color: #1a1e23;
     color: #fff;
+    padding-bottom: 51px;
 }
   .text-big{
 
@@ -187,6 +188,7 @@ h5{
 .skills-section {
     background-color: #1a1e23;
     color: #fff;   
+    margin-bottom: 15px;
 }
 .skills-section .section-title{
     color: #fff;
@@ -214,7 +216,7 @@ h5{
     position: relative;
 }
 .progress {
-    height: 10px;
+    height: 15px;
     margin-bottom: 40px;
     background-color: #3a4149;
     border-radius: 3px;
@@ -223,7 +225,7 @@ h5{
 }
 
 .progress-bar {
-    background-color: #547d6f;
+    background-color: #00B0BD;
 }
 .progress-bar span{
     position: absolute;
