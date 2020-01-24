@@ -304,8 +304,16 @@ h5{
 .chart .chart-text h3{font-size:22px;}
 
 
+/* icones fontawesome  */
 
+.section_title{
+    color:#FFFFFF;
+}
 
+.icone::before {
+    word-spacing:2000px;
+    content: "";
+}
 
 
 
