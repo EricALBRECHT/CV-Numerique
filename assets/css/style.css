@@ -315,6 +315,10 @@ h5{
     content: "";
 }
 
+/* photo */
+.rounded-style{
+    border-radius: 5px;;
+}
 
 
 
