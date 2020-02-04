@@ -70,7 +70,7 @@
     padding: 27px 25px;
   }
   .timeline-article p {
-    margin: 0 0 0 60px;
+    margin: 0 0 0 10px;
     padding: 0;
     font-weight: 400;
     color: #fff;
@@ -84,6 +84,14 @@
     font-size: 44px;
     top: 10px;
     left: -60px;
+    color: #fff;
+  }
+   h6.article-title{
+    
+    font-weight: 300;
+    font-size: 22px;
+    top: 10px;
+        
     color: #fff;
   }
   .timeline-article .content-left-container {
@@ -118,7 +126,7 @@
     color:#00B0BD;
     border-radius: 100%;
     background: white;
-    border: 3px solid #00b0bd;
+    border: 0px solid #00b0bd;
   }
   .timeline-article .meta-date .date,
   .timeline-article .meta-date .year {

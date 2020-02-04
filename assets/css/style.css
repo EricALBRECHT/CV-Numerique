@@ -17,10 +17,12 @@ html {
 {
     background-color: white;
     transition-duration:1s;
+    /*border-bottom:1px solid #DDDDDD;*/
 }
 .navBarEffectDark{
     background-color: none;
     transition-duration:1s;
+    
 }
 .header{
 background-image: url("../img/portable_bois_cafe3.jpg");
@@ -32,9 +34,7 @@ height: 25em;
 width: 100%;
 }
 
-.test{
-    border:1px solid black;
-}
+
 h1{
     font-size: 64px;
 }
@@ -55,7 +55,7 @@ h5{
     text-decoration: none; 
 }
 .parallax2{
-    background-image: url('../img/diplome2.jpg');
+    background-image: url('../img/business-2089533_1920.jpg');
 }
 .parallax1{
     /*background-image: url('../img/cv-numerique.jpg');*/
@@ -319,7 +319,6 @@ h5{
 .rounded-style{
     border-radius: 5px;;
 }
-
 
 
 
