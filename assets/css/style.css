@@ -330,6 +330,25 @@ h5 {
 }
 
 
+/* ================== colors =================*/
+
+.bg-blue {
+    background-color: #1B4F72;
+}
+
+.text-blue {
+    color: #1B4F72;
+}
+
+.bg-bluemedium {
+    background-color: #21618C;
+}
+
+.text-bluemedium {
+    color: #21618C;
+}
+
+
 /*.percent:after {content: '%';margin-left: 0.1em;font-size: .8em;}*/
 
 .angular {
