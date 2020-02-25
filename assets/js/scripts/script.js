@@ -1,9 +1,12 @@
 $(document).ready(function() {
     // reglages des effets en fonction de la resolution d'ecran
-    AOS.init({
-        duration: 1200,
-    });
 
+    largeur = $(window).width(); //si ecran large, on utilise le parallax
+    if (largeur > 600) {
+        AOS.init({
+            duration: 1200,
+        });
+    };
 
     $(window).on("resize", function() {
             largeur = $(window).width(); //si ecran large, on utilise le parallax
