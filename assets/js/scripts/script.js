@@ -30,9 +30,7 @@ $(document).ready(function() {
             $.each($('.progress-bar'), function() {
                 $(this).css('width', $(this).attr('aria-valuenow') + '%');
             });
-
             $(this).unbind('inview');
-
         }
 
         // -------------------------------------------------------------
