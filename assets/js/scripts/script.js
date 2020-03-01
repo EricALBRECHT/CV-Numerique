@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.loader').hide(); /*je cache le loader après le chargement de la page*/
+
 
     // reglages des effets en fonction de la resolution d'ecran
 
@@ -55,4 +55,10 @@ $(document).ready(function() {
             }
         });
     });
+
+    /* $('#preloader').hide(); /*je cache le loader après le chargement de la page*/
+
+});
+$(document).ready(function() {
+    $('#preloader').delay(1500).fadeOut(200);
 });

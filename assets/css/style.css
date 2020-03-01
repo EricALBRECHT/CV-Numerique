@@ -405,21 +405,40 @@ h5 {
 
 /* ===================== page de chargement =================================*/
 
-.loader {
-    background-color: white;
-    width: 100%;
-    height: 100em;
-    overflow: hidden;
+#preloader {
+    background: #FFF;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
 }
 
-.loading {
-    background-color: red;
-    position: fixed;
-    z-index: 9999;
-    background: url('../img/icon-loader.gif') 50% 50% no-repeat;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    cursor: wait;
+#status,
+.status-mes {
+    background-image: url(../img/489.GIF);
+    background-size: 2em;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+
+.status-mes {
+    background: none;
+    left: 0;
+    margin: 0;
+    text-align: center;
+    top: 65%;
+}
+
+.status-mes h4 {
+    color: #222;
+    margin-top: 30px;
+    margin-left: -10px;
 }
