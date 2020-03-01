@@ -57,8 +57,5 @@ $(document).ready(function() {
     });
 
     /* $('#preloader').hide(); /*je cache le loader après le chargement de la page*/
-
-});
-$(document).ready(function() {
-    $('#preloader').delay(1500).fadeOut(200);
+    $('#preloader').delay(3000).fadeOut(200);
 });
