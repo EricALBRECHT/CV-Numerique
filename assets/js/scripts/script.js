@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    $('.loader').hide(); /*je cache le loader après le chargement de la page*/
+
     // reglages des effets en fonction de la resolution d'ecran
 
     largeur = $(window).width(); //si ecran large, on utilise le parallax
@@ -6,23 +9,12 @@ $(document).ready(function() {
         AOS.init({
             duration: 1200,
         });
+        var s = skrollr.init();
     };
 
-    $(window).on("resize", function() {
-            largeur = $(window).width(); //si ecran large, on utilise le parallax
-            if (largeur > 600) {
-                //animation fenetres
-
-                // declenche les evenements (animations) au moment ou on scroll dessus
-                var s = skrollr.init();
-
-            } else if (largeur <= 600) { //si on est sur mobile on le desactive
-                var s = '';
-            }
-        })
-        // -------------------------------------------------------------
-        // Progress Bar
-        // -------------------------------------------------------------
+    // -------------------------------------------------------------
+    // Progress Bar
+    // -------------------------------------------------------------
 
     $('#skill').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
 
